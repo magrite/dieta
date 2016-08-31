@@ -1,7 +1,12 @@
 {
-    "name": "node-api",
-    "main": "server.js",
-    "dependencies": {
-
-    }
+  "name": "dieta",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.2.1",
+    "load-grunt-config": "^0.19.2"
+  }
 }
