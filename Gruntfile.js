@@ -12,8 +12,10 @@ module.exports = function (grunt) {
                 distDir: 'web/dist',
                 distStyles: 'web/dist/debug',
                 distScripts: 'web/dist/debug',
+                distReleaseScripts: 'web/dist/debug',
                 devDir: 'web/dev/',
                 devStyles: 'web/dev/scss',
+                devReleaseStyles: 'web/dev/scss',
                 devScripts: 'web/dev/js',
             },
         }
