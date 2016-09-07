@@ -1,3 +1,19 @@
-var log = require('./log');
+var Backbone = require("backbone");
+var $ = require('jquery');
+var _ = require('underscore');
+var Router = require('./router');
 
-log.log('dupa');
+_.templateSettings = {
+  interpolate: /\{\{(.+?)\}\}/g
+};
+
+new Router();
+Backbone.history.start();
+
+
+
+
+var template = _.template("Hello {{ name }}!");
+
+
+console.log(template({name: "Mustache"}));

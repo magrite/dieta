@@ -9,6 +9,7 @@ module.exports = function (grunt) {
             conf: {
                 web: 'web',
                 config: 'app/config',
+                htmlDir: 'views',
                 distDir: 'web/dist',
                 distStyles: 'web/dist/debug',
                 distScripts: 'web/dist/debug',

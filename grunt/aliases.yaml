@@ -1,3 +1,4 @@
 watchit:
     - browserify
+    - sass
     - watch

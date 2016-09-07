@@ -1,12 +1,50 @@
 <?php
 
-// web/index.php
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
+$app['debug'] = true;
 
-$app->get('/hello/{name}', function ($name) use ($app) {
-    return '<script src="/dist/debug/all.js"></script>Hello '.$app->escape($name).'<script src="//localhost:35729/livereload.js"></script>';
+// ===========================
+// PROVIDERS
+// ===========================
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/../views',
+));
+
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => array(
+        'driver' => 'pdo_mysql',
+        'host' => 'localhost',
+        'dbname' => 'dieta',
+        'user' => 'root',
+        'password' => '',
+    ),
+));
+
+$app->register(new Silex\Provider\VarDumperServiceProvider());
+
+// ===========================
+
+// ===========================
+// ROUTES
+// ===========================
+
+$app->get('/', function () use ($app) {
+    $sql = "SELECT * FROM recipe";
+    $recipes = $app['db']->fetchAll($sql);
+
+    return $app['twig']->render('hello.html.twig', array(
+    ));
 });
+
+$app->get('/recipes', function() use ($app) {
+    $sql = "SELECT * FROM recipe";
+    $recipes = $app['db']->fetchAll($sql);
+
+    return $app->json($recipes);
+});
+
+// ===========================
 
 $app->run();

@@ -1,5 +1,7 @@
-module.exports = {
-    log: function(sth) {
-        console.log(sth);
+var log = {
+    sayHi: function (name){
+        console.log(name);
     }
 };
+
+module.exports = log;
