@@ -4,7 +4,7 @@ module.exports = {
             '<%= conf.distScripts %>/all.js': '<%= conf.devScripts %>/main.js'
         },
         options: {
-            watch: true
+            watch: true,
         }
     }
 };

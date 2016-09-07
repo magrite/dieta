@@ -1,8 +1,8 @@
 var Backbone = require("backbone");
 var $ = require('jquery');
-
-var RecipeView = require('./recipeView');
-var Recipes = require('./recipeCollection');
+var RecipesController = require('./controllers/collections/Recipes');
+// var RecipeView = require('./recipeView');
+// var Recipes = require('./recipeCollection');
 
 var Router = Backbone.Router.extend({
     routes: {
@@ -10,6 +10,7 @@ var Router = Backbone.Router.extend({
     },
 
     recipe: function(){
+        RecipesController.init();
         // var view = new RecipeView();
         // var collection = new Recipes();
         //
